@@ -1,0 +1,245 @@
+/* =====================================================
+   NATURE PORTFOLIO — Global Styles
+   Noor Thowfiq
+   ===================================================== */
+
+@import "tailwindcss";
+
+/* ── Fonts ────────────────────────────────────────── */
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-poppins: 'Poppins', system-ui, sans-serif;
+
+  /* ── Color palette — Notosan warm illustrated ── */
+  --bg-primary:     #0d0a18;
+  --bg-secondary:   #120d22;
+  --bg-card:        #1a1428;
+  --bg-card-warm:   #1e1530;
+
+  --forest-green:   #2a4a35;
+  --forest-light:   #3d6b4a;
+  --forest-pale:    #5a9068;
+  --sky-blue:       #4a6a9a;
+  --sky-light:      #7090c8;
+  --sky-pale:       #a0b0d0;
+  --warm-orange:    #c4654a;
+  --warm-gold:      #d4956a;
+  --warm-amber:     #f0c080;
+  --purple-mid:     #7a5a9a;
+  --purple-light:   #c4a0e8;
+  --mountain-dark:  #1a2535;
+
+  --text-primary:   #FFFFFF;
+  --text-secondary: #d8c8e8;
+  --text-muted:     #8a7a9a;
+  --text-dim:       #5a4a6a;
+
+  --accent-warm:    #d4956a;
+  --accent-purple:  #9a70c0;
+  --accent-teal:    #4a8a7a;
+
+  --border-subtle:  rgba(255,255,255,0.06);
+  --border-warm:    rgba(196,101,74,0.3);
+  --border-purple:  rgba(160,130,210,0.25);
+}
+
+/* ── Reset + Base ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb {
+  background: var(--forest-green);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--forest-light); }
+
+/* ── Typography utilities ─────────────────────────── */
+.font-inter   { font-family: var(--font-inter) !important; }
+.font-poppins { font-family: var(--font-poppins) !important; }
+
+.text-nature-primary   { color: var(--text-primary); }
+.text-nature-secondary { color: var(--text-secondary); }
+.text-nature-muted     { color: var(--text-muted); }
+.text-forest           { color: var(--forest-light); }
+.text-sky              { color: var(--sky-blue); }
+.text-warm             { color: var(--accent-warm); }
+
+/* ── Section title ────────────────────────────────── */
+.section-title {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ── Gradient text ────────────────────────────────── */
+.gradient-text-nature {
+  background: linear-gradient(135deg, var(--forest-pale) 0%, var(--sky-blue) 60%, var(--sky-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Nature Cards ─────────────────────────────────── */
+.nature-card {
+  background: rgba(15, 26, 18, 0.75);
+  border: 1px solid var(--border-green);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nature-card:hover {
+  border-color: rgba(78, 139, 90, 0.45);
+  box-shadow: 0 8px 32px rgba(53, 94, 59, 0.15);
+}
+
+.nature-card-blue {
+  background: rgba(11, 20, 32, 0.8);
+  border: 1px solid var(--border-blue);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nature-card-blue:hover {
+  border-color: rgba(91, 143, 185, 0.45);
+  box-shadow: 0 8px 32px rgba(91, 143, 185, 0.12);
+}
+
+.stone-card {
+  background: rgba(17, 24, 32, 0.85);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* ── Skill tag ────────────────────────────────────── */
+.skill-tag {
+  font-family: var(--font-inter);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(53, 94, 59, 0.15);
+  color: var(--forest-pale);
+  border: 1px solid rgba(53, 94, 59, 0.3);
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(53, 94, 59, 0.28);
+  color: #fff;
+}
+
+/* ── Buttons ──────────────────────────────────────── */
+.btn-primary {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: var(--forest-green);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--forest-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(53, 94, 59, 0.35);
+}
+
+.btn-outline {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 11px 28px;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--sky-blue);
+  color: var(--sky-blue);
+  background: rgba(91, 143, 185, 0.06);
+}
+
+/* ── Divider ──────────────────────────────────────── */
+.nature-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--forest-green), transparent);
+  border: none;
+  margin: 0;
+}
+
+/* ── Input fields ─────────────────────────────────── */
+.nature-input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text-primary);
+  font-family: var(--font-inter);
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nature-input::placeholder { color: var(--text-dim); }
+
+.nature-input:focus {
+  border-color: var(--forest-green);
+  box-shadow: 0 0 0 3px rgba(53, 94, 59, 0.12);
+}
+
+/* ── Canvas wrapper ───────────────────────────────── */
+.canvas-wrapper {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Layout ───────────────────────────────────────── */
+.bg-nature {
+  background-color: #0d0a18;
+  min-height: 100vh;
+}
+
+/* ── Tailwind overrides ───────────────────────────── */
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
